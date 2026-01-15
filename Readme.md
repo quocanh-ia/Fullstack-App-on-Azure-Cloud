@@ -347,35 +347,37 @@ All authentication-related Acceptance Criteria for Week 1 have been satisfied.
 - Cloudflare Tunnel (HTTPS workaround)
 
 ---
+
 ## 📁 Project Structure
+
+```text
 .
-├── cert-manager/
-│   └── cluster-issuer.yaml
-│
-├── week1/
-│   ├── api/
-│   │   ├── src/
-│   │   │   ├── middleware/
-│   │   │   │   └── auth.ts
-│   │   │   ├── routes/
-│   │   │   │   └── auth.ts
-│   │   │   └── index.ts
-│   │   ├── k8s/
-│   │   │   ├── 10-api-deploy.yaml
-│   │   │   ├── 20-api-svc.yaml
-│   │   │   └── 30-api-ingress.yaml
-│   │   ├── Dockerfile
-│   │   ├── package.json
-│   │   ├── pnpm-lock.yaml
-│   │   └── tsconfig.json
-│   │
-│   └── web/
-│       ├── src/
-│       │   └── App.tsx
-│       ├── k8s/
-│       │   ├── 10-web-deploy.yaml
-│       │   ├── 20-web-svc.yaml
-│       │   └── 30-app-ingress.yaml
-│       └── Dockerfile
-│
-└── README.md
+├─ cert-manager/
+│  └─ cluster-issuer.yaml
+├─ week1/
+│  ├─ api/
+│  │  ├─ src/
+│  │  │  ├─ middleware/
+│  │  │  │  └─ auth.ts
+│  │  │  ├─ routes/
+│  │  │  │  └─ auth.ts
+│  │  │  └─ index.ts
+│  │  ├─ k8s/
+│  │  │  ├─ 10-api-deploy.yaml
+│  │  │  ├─ 20-api-svc.yaml
+│  │  │  └─ 30-api-ingress.yaml
+│  │  ├─ Dockerfile
+│  │  ├─ package.json
+│  │  ├─ pnpm-lock.yaml
+│  │  └─ tsconfig.json
+│  └─ web/
+│     ├─ src/
+│     │  └─ App.tsx
+│     ├─ k8s/
+│     │  ├─ 10-web-deploy.yaml
+│     │  ├─ 20-web-svc.yaml
+│     │  └─ 30-app-ingress.yaml
+│     └─ Dockerfile
+└─ README.md
+
+```
