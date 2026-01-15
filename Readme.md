@@ -336,27 +336,45 @@ All authentication-related Acceptance Criteria for Week 1 have been satisfied.
 ---
 
 ## 🧱 Tech Stack
-- **Node.js** (v20 – Alpine)
-- **Express**
-- **TypeScript**
-- **pnpm**
-- **Docker**
-- **Azure Container Registry (ACR)**
-- **Azure Kubernetes Service (AKS)**
+- Node.js 20 (Alpine – Docker base image)
+- Express.js
+- TypeScript
+- pnpm (local development)
+- Docker
+- Azure Container Registry (ACR)
+- Azure Kubernetes Service (AKS)
+- Kubernetes (Deployment, Service, Ingress)
+- Cloudflare Tunnel (HTTPS workaround)
 
 ---
-
-## 📂 Project Structure
-```text
-week1/
-├── api/
-│   ├── src/
-│   │   └── index.ts
-│   ├── k8s/
-│   │   ├── 10-api-deploy.yaml
-│   │   └── 20-api-svc.yaml
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── pnpm-lock.yaml
-│   └── tsconfig.json
-└── Readme.md
+## 📁 Project Structure
+.
+├─ cert-manager/
+│  └─ cluster-issuer.yaml
+│
+├─ week1/
+│  ├─ api/
+│  │  ├─ src/
+│  │  │  ├─ middleware/
+│  │  │  │  └─ auth.ts
+│  │  │  └─ routes/
+│  │  │     └─ auth.ts
+│  │  ├─ k8s/
+│  │  │  ├─ 10-api-deploy.yaml
+│  │  │  ├─ 20-api-svc.yaml
+│  │  │  └─ 30-api-ingress.yaml
+│  │  ├─ Dockerfile
+│  │  ├─ package.json
+│  │  ├─ pnpm-lock.yaml
+│  │  └─ tsconfig.json
+│  │
+│  └─ web/
+│     ├─ src/
+│     │  └─ App.tsx
+│     ├─ k8s/
+│     │  ├─ 10-web-deploy.yaml
+│     │  ├─ 20-web-svc.yaml
+│     │  └─ 30-app-ingress.yaml
+│     └─ Dockerfile
+│
+└─ README.md

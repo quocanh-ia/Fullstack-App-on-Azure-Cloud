@@ -2,13 +2,13 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# dùng pnpm đúng version
+# Enable corepack to use the correct pnpm version
 RUN corepack enable
 
-# copy manifest trước
+# Copy manifests first to leverage Docker layer caching
 COPY package.json pnpm-lock.yaml ./
 
-# CÀI ĐẦY ĐỦ (bao gồm devDependencies để build TS)
+# Install all dependencies (including devDependencies) for TypeScript build
 RUN pnpm install --prefer-frozen-lockfile
 
 # copy source
