@@ -2,23 +2,19 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Copy manifest trước để tận dụng cache
-COPY package.json package-lock.json ./
-RUN npm ci
+RUN corepack enable
+RUN corepack prepare pnpm@10.28.1 --activate
 
-# Copy source và build
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+
 COPY . .
-RUN npm run build
+RUN pnpm run build
 
 # ===== Run stage =====
-FROM node:20-alpine
-WORKDIR /app
+FROM nginx:1.25-alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Serve static files
-RUN npm i -g serve
-
-COPY --from=builder /app/dist ./dist
-
-ENV PORT=8080
 EXPOSE 8080
-CMD ["serve", "-s", "dist", "-l", "8080"]
+CMD ["nginx", "-g", "daemon off;"]

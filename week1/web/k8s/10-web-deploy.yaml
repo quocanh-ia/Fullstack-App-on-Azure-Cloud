@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: mindxintern02acr01.azurecr.io/web:1.0.0
+          image: mindxintern02acr01.azurecr.io/web:1.0.3
           ports:
             - containerPort: 8080
           resources:

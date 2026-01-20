@@ -15,7 +15,7 @@ This step establishes the backend foundation for the upcoming steps, including I
 - Backend API is deployed on Azure Kubernetes Service (AKS).
 - External HTTPS access is provided via Cloudflare Tunnel.
 - Health check endpoint:
-  https://suited-nominated-characteristic-cams.trycloudflare.com/api/health
+  https://suited-nominated-characteristic-cams.trycloudflare.com/health
 - Expected response:
   { "status": "ok" }
 
@@ -144,7 +144,7 @@ HTTPS is terminated at Cloudflare using Cloudflare Tunnel.
 ├── cert-manager/
 │   └── cluster-issuer.yaml
 ├── week1/
-│   ├── api/
+│   ├── api/ 
 │   │   ├── src/
 │   │   │   ├── middleware/
 │   │   │   │   └── auth.ts
@@ -159,14 +159,23 @@ HTTPS is terminated at Cloudflare using Cloudflare Tunnel.
 │   │   ├── package.json
 │   │   ├── pnpm-lock.yaml
 │   │   └── tsconfig.json
-│   └── web/
+│   └── web/  
 │       ├── src/
+│       │   ├── pages/
+│       │   │   ├── AppPage.tsx
+│       │   │   └── LoginPage.tsx
+│       │   ├── auth.ts
+│       │   ├── ProtectedRoute.tsx
+│       │   ├── vite-env.d.ts
+│       │   ├── main.tsx
 │       │   └── App.tsx
 │       ├── k8s/
 │       │   ├── 10-web-deploy.yaml
 │       │   ├── 20-web-svc.yaml
 │       │   └── 30-app-ingress.yaml
-│       └── Dockerfile
+│       ├── nginx.conf
+│       ├── Dockerfile
+│       └── tsconfig.app.json
 ├── Readme.md
 └── Deployment_Guide.docx
 
