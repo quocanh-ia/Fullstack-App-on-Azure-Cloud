@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import "./styles.css";
+
 import LoginPage from "./pages/LoginPage";
 import AppPage from "./pages/AppPage";
 import ProtectedRoute from "./ProtectedRoute";
