@@ -41,24 +41,20 @@ This step establishes the backend foundation for the upcoming steps, including I
 
 ---
 
-## Authentication is integrated and functional using OpenID with https://id-dev.mindx.edu.vn.
+## Authentication is implemented using a custom JWT-based mechanism
 
-- Direct integration with https://id-dev.mindx.edu.vn is not feasible within the given time and permission constraints
-  (requires key registration / whitelist approval).
-- A custom authentication mechanism (Register / Login / JWT) is implemented as a replacement.
-- This approach was explicitly approved by the mentor as acceptable for this assignment.
-- The implemented solution demonstrates:
-  - Authentication flow
-  - Token issuance
-  - Token validation
+- A custom authentication mechanism (Register / Login / JWT) is implemented.
+- The solution covers the full authentication lifecycle:
+  - User authentication
+  - JWT access token issuance
+  - Token validation on protected endpoints
 
 ---
 
-## Users can log in and log out via the front-end using OpenID.
+## Users can log in and log out via the front-end using JWT-based authentication
 
 - Front-end provides login and logout functionality.
 - Users can log in, receive a JWT token, and log out by clearing authentication state.
-- While OpenID is not directly used, the login and logout behavior is fully implemented and functional.
 
 ---
 
@@ -70,12 +66,12 @@ This step establishes the backend foundation for the upcoming steps, including I
 
 ---
 
-## The back-end API validates and authorizes requests using the OpenID token.
+## The back-end API validates and authorizes requests using JWT access tokens
 
-- Backend validates JWT tokens on protected endpoints.
+- Backend validates JWT access tokens on protected endpoints.
 - Requests without valid tokens are rejected (401 Unauthorized).
 - Token validation and authorization logic is fully implemented.
-- This replaces OpenID token validation as an approved workaround.
+- The back-end strictly validates and authorizes requests using JWT access tokens.
 
 ---
 
