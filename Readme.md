@@ -140,7 +140,7 @@ HTTPS is terminated at Cloudflare using Cloudflare Tunnel.
 ├── cert-manager/
 │   └── cluster-issuer.yaml
 ├── week1/
-│   ├── api/ 
+│   ├── api/
 │   │   ├── src/
 │   │   │   ├── middleware/
 │   │   │   │   └── auth.ts
@@ -155,23 +155,29 @@ HTTPS is terminated at Cloudflare using Cloudflare Tunnel.
 │   │   ├── package.json
 │   │   ├── pnpm-lock.yaml
 │   │   └── tsconfig.json
-│   └── web/  
+│   └── web/
 │       ├── src/
 │       │   ├── pages/
 │       │   │   ├── AppPage.tsx
 │       │   │   └── LoginPage.tsx
+│       │   ├── ui/
+│       │   │   ├── Button.tsx
+│       │   │   ├── Card.tsx
+│       │   │   ├── Input.tsx
+│       │   │   └── Layout.tsx
 │       │   ├── auth.ts
 │       │   ├── ProtectedRoute.tsx
 │       │   ├── vite-env.d.ts
 │       │   ├── main.tsx
-│       │   └── App.tsx
+│       │   ├── App.tsx
+│       │   └── styles.css
 │       ├── k8s/
 │       │   ├── 10-web-deploy.yaml
 │       │   ├── 20-web-svc.yaml
 │       │   └── 30-app-ingress.yaml
 │       ├── nginx.conf
 │       ├── Dockerfile
-│       └── tsconfig.app.json
+│       ├── tsconfig.app.json
 ├── Readme.md
 └── Deployment_Guide.docx
 
