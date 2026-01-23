@@ -1,3 +1,4 @@
+import "./telemetry";
 import express, { Request, Response } from "express";
 import cors from "cors";
 import authRoutes from "./routes/auth";
@@ -5,7 +6,6 @@ import { authMiddleware } from "./middleware/auth";
 
 const app = express();
 
-// ✅ CORS phải ở TRƯỚC routes
 app.use(
   cors({
     origin: "*",
