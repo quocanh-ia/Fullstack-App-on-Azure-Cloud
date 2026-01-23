@@ -305,7 +305,8 @@ This secret was created during initial setup. See `week1/api/k8s/10-api-deploy.y
 │   │   │   │   └── auth.ts
 │   │   │   ├── routes/
 │   │   │   │   └── auth.ts
-│   │   │   └── index.ts
+│   │   │   ├── index.ts
+│   │   │   └── telemetry.ts
 │   │   ├── k8s/
 │   │   │   ├── 10-api-deploy.yaml
 │   │   │   ├── 20-api-svc.yaml
@@ -337,7 +338,7 @@ This secret was created during initial setup. See `week1/api/k8s/10-api-deploy.y
 │       ├── nginx.conf
 │       ├── Dockerfile
 │       ├── tsconfig.app.json
+│       └── index.html
 ├── Readme.md
 └── Deployment_Guide.docx
-
 ```
